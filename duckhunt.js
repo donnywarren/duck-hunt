@@ -114,9 +114,17 @@ window.onload = function () {
     allDucks[i].addEventListener('click', () => {
       allDucks[i].classList.add("shot");
       setTimeout(() => { allDucks[i].remove() }, 1000);
-      checkForWinner();
+      setTimeout(function () { checkForWinner(); }, 1020);
     })
   }
+
+
+
+
+  // function myFunction() {
+  //   setTimeout(function () { checkForWinner(); }, 1020);
+  // }
+
 
   // 12. After a duck has been clicked on, remove it from the DOM after
   //     a short delay (1 second) Hint Hint...use setTimeout
@@ -129,7 +137,7 @@ window.onload = function () {
 
   function checkForWinner() {
     const dead = document.querySelectorAll(".duck");
-    if (dead.length === 1) {
+    if (dead.length === 0) {
       alert("YOU WIN!");
     };
   };
